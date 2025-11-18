@@ -1,0 +1,51 @@
+Immutable class, Collections, Threads, Singleton pattern, Solid principles, HashMap and concurrentHashMap,
+Dependency injections, spring boot related, volatile, synchronized and atomic variables, API based questions
+
+S -> Single responsibility
+O -> Open for extension and closed for modification
+L -> Liskov substitution
+     Child class must be completely substitutable for their parent class,
+	 Ex: Instagram class does not support groupVideoCall method,
+	 Keep all supported methods in 1 interface and for others create separate interfaces.
+I -> Interface segregation
+     Keep all supported methods in 1 interface and for others create separate interfaces.
+D -> Dependency inversion
+
+
+
+Dependency Injection is the actual implementation of IoC (Inversion of Control)
+IoC is a principle, In Spring we use DI to achieve IoC.
+
+
+
+volatile -> We want to expose visibility of changes to a value for diferrent threads,
+            Never cached, read directly from main memory,
+            Can only be used for field declarations,
+            Methods, Classes, Local variable and parameters cannot be volatile,
+            Use when the variable is read frequently but not modified frequently,
+            volatile does not gurantee Atomicity.
+Atomicity -> This is achieved by synchronized,
+synchronized -> Can be used on methods or block of code,
+             Only 1 thread can execute a block of code at a given time.
+Visibility -> Changes done by 1 thread are visible to other threads.
+Atomic Variables -> Operations on these variables, such as incrementAndGet(), compareAndSet(), or getAndSet(), are guaranteed to be atomic.
+                    This means they are executed as a single, uninterrupted unit of work, even in the presence of multiple threads.
+
+My learning -> If a volatile variable is updated and in between if another thread trying to read the value,
+               There is a chance that it still reads old value and not the updated value,
+               In this case of multi threaded environment, We need to use Atomic variables.
+When to use Atomic variables?
+I have update operation on a shared variable, I don't want to use heavy duty synchronization.
+
+
+
+HashMap                                                concurrentHashMap
+> Not synchronized (Multiple operation at a time)      > Synchronized (One operation at a time)
+> Not thread safe                                      > Thread safe
+> Fail-Fast (Exception during Iteration)               > Fail-Safe (Performs iteration by multiple threads)
+> Allows null keys and values                          > Does not allows null keys/values
+> Faster than concurrentHashMap                        > Slower than HashMap
+
+
+
+Comparator is an interface using which we can specify our own logic for sorting by overriding compare(Object obj1, Object obj2) method.

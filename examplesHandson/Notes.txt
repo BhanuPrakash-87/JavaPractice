@@ -49,3 +49,7 @@ HashMap                                                concurrentHashMap
 
 
 Comparator is an interface using which we can specify our own logic for sorting by overriding compare(Object obj1, Object obj2) method.
+Defines custom ordering logic for objects, external to the class.
+
+Comparable is also an interface where we give the power to class itself to compare its objects,
+Defines the natural ordering of objects within the class itself.

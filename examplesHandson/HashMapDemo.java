@@ -17,19 +17,19 @@ public class HashMapDemo {
         Iterator<Entry<Integer, String>> itr1 = hmap.entrySet().iterator();
         while (itr1.hasNext()) {
             System.out.println(itr1.next());
-            hmap.put(300, "Grapes");
+            //hmap.put(300, "Grapes"); // java.util.ConcurrentModificationException
         }
 
-        Map<Integer, String> conHmap = new ConcurrentHashMap()<>();
-        conHmap.put(100, "Apple");
-        conHmap.put(200, "Orange");
-        conHmap.put(null, "Mango");
-        conHmap.put(null,null);
+        Map<Integer, String> conHmap = new ConcurrentHashMap<Integer, String>();
+        conHmap.put(1001, "Apple");
+        conHmap.put(2001, "Orange");
+        //conHmap.put(null, "Mango"); //java.lang.NullPointerException
+        //conHmap.put(null,null); //java.lang.NullPointerException
 
         Iterator<Entry<Integer, String>> itr2 = conHmap.entrySet().iterator();
         while (itr2.hasNext()) {
             System.out.println(itr2.next());
-            conHmap.put(300, "Grapes");
+            conHmap.put(3001, "Grapes");
         }
     }
 }

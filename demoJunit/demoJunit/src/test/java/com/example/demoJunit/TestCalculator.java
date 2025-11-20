@@ -24,11 +24,14 @@ public class TestCalculator {
 	};
 	*/
 	
-	//CalculatorService service = Mockito.mock(CalculatorService.class);
+	CalculatorService service = Mockito.mock(CalculatorService.class);
 	
-
+	/*
 	@Mock
 	CalculatorService service;
+	
+	@Rule public MockitoRule rule = MockitoJUnit.rule();
+	*/
 	
 	@BeforeEach
 	public void setup () {
@@ -39,6 +42,6 @@ public class TestCalculator {
 	public void testPerform () {
 		when(service.add(2, 3)).thenReturn(5);
 		assertEquals(10, c.perform(2, 3));
-		verify(service).add(0, 0);
+		verify(service).add(2, 3);
 	}
 }

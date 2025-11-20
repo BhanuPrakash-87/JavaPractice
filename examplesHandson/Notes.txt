@@ -53,3 +53,8 @@ Defines custom ordering logic for objects, external to the class.
 
 Comparable is also an interface where we give the power to class itself to compare its objects,
 Defines the natural ordering of objects within the class itself.
+
+
+
+Spring Security:
+User input -> Server -> Spring Security Filters (F1, F2, ....) -> Dispatcher Servlet -> Controller

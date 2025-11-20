@@ -1,0 +1,70 @@
+Opps, Design pattern, Alogrithm and Data structures,
+Juint, Mocito, Monolith architure, Microservices
+git SVN,
+Maven, Gradel,
+Team lead exp,
+Java core, Stream, Lambda,
+Collections,
+Threading, concurrency,
+JMM, Garbage collection, JDBC, 
+
+Transaction and SQL
+
+REST API, ORM, JPA Hibernate, Spring code, Ioc, Beans, Spring boot
+
+
+Data Art:
+=========
+Explain Dependency Inversion in SOLID Principle
+n+1 problem in hibernate
+Dependency vs Dependency management
+Transitive Dependency
+
+//List<Integer> elements = Arrays.asList(32, 15, 8, 28, 45, 8, 85, 32, 14);
+
+//Implement a method that uses **Java Stream API** to find and return all duplicated elements in the given list
+ 
+//-----------------
+ 
+//Implement a method that uses **Java Stream API** to find and return an element
+//of the given list that starts with a provided value. If there is no such element - throw a RuntimeException
+
+
+
+"There is a table called 'Persons' which consists of several columns: 
+- id: primary key, NUMBER
+- surname: VARCHAR
+....
+Some values in 'surname' column are duplicated (e.g. in rows#1, 3, 4, 5, 7, rows#2, 8, etc.). 
+Task: 
+Write an SQL query to select surname value + quantity of duplication of such a surname in the table with additional filter: show the surnames that are duplicated more than 4 times. Example of the result for current values is in cell C:18"					
+					
+id	Surname
+1	Newton
+2	Stone
+3	Newton
+4	Newton
+5	Newton
+6	Shevchenko
+7	Newton
+8	
+9	Shevchenko
+	
+	
+	Newton 5
+	SELECT Surname, (SELECT COUNT(*) FROM Persons) AS DuplicateCount from Persons GROUP BY Surname;
+	
+interface UserService											interface AddressService		
+							
+							
+@Service														@Service		
+UserServiceImpl implements UserService							AddressServiceMock implements AddressService		
+"@Autowire
+public UserServiceImpl(AddressService addressService) {
+.....
+}"							
+																@Service		
+																ExternalAddressService implements AddressService		
+							
+																@Service		
+																JPAAddressService implements AddressService		

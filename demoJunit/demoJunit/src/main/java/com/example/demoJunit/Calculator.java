@@ -10,7 +10,7 @@ public class Calculator {
 	}
 
 	public int perform (int i, int j) {
-		return service.add(i, j)*2;
+		return service.add(i, j)*i;
 		//return (i+j)*i;
 	}
 }

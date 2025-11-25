@@ -12,9 +12,9 @@ Transaction and SQL
 
 REST API, ORM, JPA Hibernate, Spring code, Ioc, Beans, Spring boot
 
-
+=========================================================
 Data Art:
-========================================================================================================
+
 > Explain Dependency Inversion in SOLID Principle
 
 > n+1 problem in hibernate
@@ -26,6 +26,8 @@ Data Art:
 > How to prevent rollback in Hibernate case of any exception
   @Transactional(noRollbackFor = {MyCustomException.class, AnotherCheckedException.class})
 
+> service vs component annotation in spring
+> find the middle element of linked list in java
 
 //List<Integer> elements = Arrays.asList(32, 15, 8, 28, 45, 8, 85, 32, 14);
 //Implement a method that uses **Java Stream API** to find and return all duplicated elements in the given list

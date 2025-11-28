@@ -3,6 +3,18 @@ Dependency injections, spring boot related, volatile, synchronized and atomic va
 
 ================================================================================================================================
 
+Immutable class:
+> Declare the class as final (to prevent subclassing), Make all fields as private and final (to ensure they cannot be modified),
+  Do not provide setter methods (To avoid modifying fields), Initialize fields through constructor,
+  Return copies of mutable fields instead of returning the original reference.
+
+================================================================================================================================
+
+Optional class:
+It was introduced to address the problem of NullPointerExceptions and provide a more explicit and functional way to handle potentially absent values.
+
+================================================================================================================================
+
 S -> Single responsibility Principle
 	 ex: "userController" class can have methods like "createUser", "deleteUser", "getUser" but not "showLogs".
 
@@ -33,13 +45,6 @@ I -> Interface segregation Principle
 D -> Dependency inversion Principle
 	 High-level modules should not depend on low-level modules, Instead both should depend on Abstractions, This help for loosely coupled code.
 	 
-	 ex: Low-level class "LightBulb" has "turnOn" method, High-level class "Switch" depends on "LightBulb" object and calls "turnOn" method to switch on bulb,
-	 If new class "Fan" comes in and has "turnOn" method, Then one more class "Switch1" will be required, depend on "Fan" object and calls "turnOn" method to switch on Fan.
-	 
-	 So, Create an Interface "Switchable" with "turnOn" method (Abstraction),
-	 First create low-level classes "LightBulb", "Fan" by implementing "Switchable" Interface,
-	 Then create high-level class "Switch", Create an object of "Switchable" as device and call "turnOn" method.
-	 
 	 ex: Low-level class "SendEmail" has "sendNotification" method, High-level class "NotificationService" depends on "SendEmail" object and calls "sendNotification" method to notify,
 	 If new class "SendSMS" comes in and has "sendNotification" method, Then one more class "NotificationService1" will be required, depend on "SendSMS" object and calls "sendNotification" method to notify.
 	 
@@ -55,7 +60,6 @@ I -> Isolation, Execution of a transaction should not interfere with execution o
 D -> Durability, The data must not be lost even if system fails.
 
 ================================================================================================================================
-
 
 Dependency Injection is the actual implementation of IoC (Inversion of Control)
 IoC is a principle, In Spring we use DI to achieve IoC.

@@ -18,15 +18,25 @@ Data Art:
 > Explain Dependency Inversion in SOLID Principle
 
 > n+1 problem in hibernate
-  @EntityGraph(attributePaths = "books")
+  1. Define method in Repository and use @EntityGraph(attributePaths = "books") for the method
+  2. Use @Query and write custom query
   
 > Dependency vs Dependency management
+  <dependencies>: declares actual, required dependencies for a specific project.
+  <dependencyManagement>: declares a set of managed dependency versions and attributes that can be inherited by child projects,
+  promoting consistency and reducing redundancy in version declarations.
+  
 > Transitive Dependency
+  MyProject depends on JUnit (direct dependency).
+  JUnit depends on Hamcrest (transitive dependency of MyProject).
 
 > How to prevent rollback in Hibernate case of any exception
   @Transactional(noRollbackFor = {MyCustomException.class, AnotherCheckedException.class})
 
-> service vs component annotation in spring
+> @Component vs @Bean annotation in spring
+  @Component - Class level annotation, Spring automatically detects classes annotated with @Component and registers them as beans in the application context.
+  @Bean - Method level annotation, useful when you need to create a bean from a class that you don't control (e.g., RestTemplate, )
+  
 > find the middle element of linked list in java
 
 //List<Integer> elements = Arrays.asList(32, 15, 8, 28, 45, 8, 85, 32, 14);
@@ -37,28 +47,13 @@ Data Art:
 
 
 
-"There is a table called 'Persons' which consists of several columns: 
-- id: primary key, NUMBER
-- surname: VARCHAR
-....
-Some values in 'surname' column are duplicated (e.g. in rows#1, 3, 4, 5, 7, rows#2, 8, etc.). 
-Task: 
-Write an SQL query to select surname value + quantity of duplication of such a surname in the table with additional filter: show the surnames that are duplicated more than 4 times. Example of the result for current values is in cell C:18"					
-					
-id	Surname
-1	Newton
-2	Stone
-3	Newton
-4	Newton
-5	Newton
-6	Shevchenko
-7	Newton
-8	
-9	Shevchenko
-	
-	
-	Newton 5
-	SELECT Surname, (SELECT COUNT(*) FROM Persons) AS DuplicateCount from Persons GROUP BY Surname;
+Write an SQL query to select surname value + quantity of duplication of such a surname in the table with additional filter: show the surnames that are duplicated more than 4 times
+SELECT
+	student_name,
+	COUNT(student_name) AS DuplicateCount
+from student
+GROUP BY student_name
+HAVING COUNT(student_name) > 4;
 
 
 

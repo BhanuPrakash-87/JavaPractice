@@ -12,7 +12,7 @@ Transaction and SQL
 
 REST API, ORM, JPA Hibernate, Spring code, Ioc, Beans, Spring boot
 
-=========================================================
+===================================================================================
 Data Art:
 
 > Explain Dependency Inversion in SOLID Principle
@@ -71,3 +71,34 @@ public UserServiceImpl(AddressService addressService) {
 							
 																@Service		
 																JPAAddressService implements AddressService		
+																
+																
+===================================================================================
+Infosys:
+1> What is Heap and Stack memory
+2> How to create asynchronous API or mocroservice
+3> What is forget in AWS lambda
+4> What is onboarding an API
+5> Java 17 features
+6> Explain Stream API and its uses
+7> 
+
+===================================================================================
+TCS:
+1> Difference between ResponseEntity and ResponseBody
+2> How to send response in xml format in spring boot
+3> How to refresh authentication token for API access
+
+4> SAGA design
+	Orchestrating a sequence of local transactions, each within a single service, and defining compensating actions to roll back changes if any step in the sequence fails
+	Or 
+	Choreographing a sequence of local transactions
+	Once Order request is received -> Choreograph a Kafka order-event topic to Payment service
+	Payment service will consume and Choreograph another Kafka payment-event topic to Order service
+	Order service will consume that request
+	
+5> AOP Design pattern
+	@Aspect enables separation of cross-cutting concerns like logging which is a overhead to the business logic method.
+	@Before, @After, @Around
+	
+6> Hashmap vs Concurrent Hashmap

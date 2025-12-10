@@ -1,4 +1,4 @@
-package AskedInInterview;
+package check;
 
 class ListNode {
 	int val;

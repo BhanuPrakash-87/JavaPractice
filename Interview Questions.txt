@@ -47,7 +47,7 @@ Data Art:
 
 
 
-Write an SQL query to select surname value + quantity of duplication of such a surname in the table with additional filter: show the surnames that are duplicated more than 4 times
+> Write an SQL query to select surname value + quantity of duplication of such a surname in the table with additional filter: show the surnames that are duplicated more than 4 times
 SELECT
 	student_name,
 	COUNT(student_name) AS DuplicateCount
@@ -72,14 +72,47 @@ public UserServiceImpl(AddressService addressService) {
 																@Service		
 																JPAAddressService implements AddressService		
 																
-																
+> Caching in SpringBoot
+	Annotate your main application class or a configuration class with @EnableCaching to activate Spring's caching mechanism
+	@EnableCaching
+	Use annotations like @Cacheable, @CachePut, and @CacheEvict on methods to control caching behavior
+
+> Caching in Hibernate with Spring Boot
+	First-Level Cache (L1 Cache) : This is a session-level cache, meaning it's tied to a specific EntityManager or Session instance
+	Second-Level Cache (L2 Cache): This is a SessionFactory-level cache, meaning it's shared across multiple sessions and potentially multiple users.
+	@Cacheable // Enables L2 caching for this entity
+	
+	Query Cache:
+	In addition to entity caching, Hibernate also supports query caching, which caches the results of frequently executed queries.
+	To enable it, set spring.jpa.properties.hibernate.cache.use_query_cache=true in application.properties and mark specific queries as cacheable using query.setCacheable(true)
+
 ===================================================================================
 Infosys:
 1> What is Heap and Stack memory
+
 2> How to create asynchronous API or mocroservice
+   To create asynchronous microservices, use a message broker (like RabbitMQ, Kafka) to decouple services
+
 3> What is forget in AWS lambda
 4> What is onboarding an API
+
 5> Java 17 features
+	> Sealed Classes : Sealed classes and interfaces restrict which classes or interfaces can extend or implement them
+     ex: public abstract sealed class Shape permits Circle, Rectangle
+   
+	> Records :
+     A special kind of class designed to simplify the declaration of immutable data-carrying classes,
+     A canonical constructor that takes all record components as arguments and initializes the corresponding fields.
+   
+	> Text Blocks :
+     Simplify working with multi-line string literals, eliminating the need for excessive escape sequences.
+	 
+	> Enhanced Pseudo-Random Number Generators
+	
+	> Pattern Matching for instanceof :
+      Object obj = "Hello Java 17!";
+      if (obj instanceof String s) {System.out.println("String length: " + s.length());}
+   
 6> Explain Stream API and its uses
 7> 
 
@@ -90,14 +123,15 @@ TCS:
 3> How to refresh authentication token for API access
 
 4> SAGA design
+    Orchestration-based : A dedicated orchestrator service manages the entire transaction flow (Single brain)
 	Orchestrating a sequence of local transactions, each within a single service, and defining compensating actions to roll back changes if any step in the sequence fails
 	Or 
-	Choreographing a sequence of local transactions
-	Once Order request is received -> Choreograph a Kafka order-event topic to Payment service
-	Payment service will consume and Choreograph another Kafka payment-event topic to Order service
-	Order service will consume that request
+	Choreography-based : Each service involved in the saga publishes events,
+	and other services react to these events, knowing their next steps and potential compensations (Each service individual brains)
 	
 5> AOP Design pattern
+	Spring Boot leverages Spring AOP to provide declarative services like transaction management (@Transactional) and security.
+	It also allows developers to implement custom aspects
 	@Aspect enables separation of cross-cutting concerns like logging which is a overhead to the business logic method.
 	@Before, @After, @Around
 	

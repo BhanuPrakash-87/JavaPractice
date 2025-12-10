@@ -1,4 +1,4 @@
-package AskedInInterview;
+package check;
 
 public interface AddressService {
 

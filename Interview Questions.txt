@@ -74,7 +74,6 @@ public UserServiceImpl(AddressService addressService) {
 																
 > Caching in SpringBoot
 	Annotate your main application class or a configuration class with @EnableCaching to activate Spring's caching mechanism
-	@EnableCaching
 	Use annotations like @Cacheable, @CachePut, and @CacheEvict on methods to control caching behavior
 
 > Caching in Hibernate with Spring Boot
@@ -88,12 +87,14 @@ public UserServiceImpl(AddressService addressService) {
 
 ===================================================================================
 Infosys:
-1> What is Heap and Stack memory
+1> What is Stack and Heapmemory
+   Stack: Local primitive variables, FIFO, Allocated when method is called, Faster to access
+   Heap: Objects and instance variables, Allocated runtime, Slower to access
 
 2> How to create asynchronous API or mocroservice
    To create asynchronous microservices, use a message broker (like RabbitMQ, Kafka) to decouple services
 
-3> What is forget in AWS lambda
+3> What is forgate API in AWS lambda -> Used along with ECS service (Serverless)
 4> What is onboarding an API
 
 5> Java 17 features
@@ -136,3 +137,11 @@ TCS:
 	@Before, @After, @Around
 	
 6> Hashmap vs Concurrent Hashmap
+
+===================================================================================
+Vitrusa:
+1. How to know if a microservice is down
+2. How to get the second max value using stream api
+3. map and flat map
+4. @Qualifier and @Primary
+5. 

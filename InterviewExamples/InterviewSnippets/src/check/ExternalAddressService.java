@@ -1,6 +1,7 @@
 package check;
 
-public class AddressServiceMock implements AddressService {
+@Serv
+public class ExternalAddressService implements AddressService {
 
 	@Override
 	public void processAddress(String address) {

@@ -33,13 +33,6 @@ I -> Interface segregation Principle
 D -> Dependency inversion Principle
 	 High-level modules should not depend on low-level modules, Instead both should depend on Abstractions, This help for loosely coupled code.
 	 
-	 ex: Low-level class "LightBulb" has "turnOn" method, High-level class "Switch" depends on "LightBulb" object and calls "turnOn" method to switch on bulb,
-	 If new class "Fan" comes in and has "turnOn" method, Then one more class "Switch1" will be required, depend on "Fan" object and calls "turnOn" method to switch on Fan.
-	 
-	 So, Create an Interface "Switchable" with "turnOn" method (Abstraction),
-	 First create low-level classes "LightBulb", "Fan" by implementing "Switchable" Interface,
-	 Then create high-level class "Switch", Create an object of "Switchable" as device and call "turnOn" method.
-	 
 	 ex: Low-level class "SendEmail" has "sendNotification" method, High-level class "NotificationService" depends on "SendEmail" object and calls "sendNotification" method to notify,
 	 If new class "SendSMS" comes in and has "sendNotification" method, Then one more class "NotificationService1" will be required, depend on "SendSMS" object and calls "sendNotification" method to notify.
 	 

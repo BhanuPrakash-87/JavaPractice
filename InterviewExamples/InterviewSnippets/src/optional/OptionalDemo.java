@@ -6,8 +6,10 @@ public class OptionalDemo {
 
 	public static void main(String[] args) {
 		
-		Customer customer = new Customer(101, "Bhanu", "abc");
+		Optional<Customer> Optionalcustomer = findCustomerByName("Bhanu");
+		System.out.println(Optionalcustomer.get().getEmail());
 		
+		/*
 		Optional<Object> emptyOptional = Optional.empty();
 		System.out.println(emptyOptional);
 		
@@ -23,8 +25,17 @@ public class OptionalDemo {
 		
 		//System.out.println(emailOptional2.orElse("default"));
 		
+		/*
 		System.out.println(emailOptional2.orElseThrow(() -> new IllegalArgumentException("email not present")));
 		
 		System.out.println(emailOptional2.map(String::toUpperCase));
+		*/
+	}
+	
+	private static Optional<Customer> findCustomerByName(String name) {
+		
+		Customer customer = new Customer(101, name, "abc");
+		//return Optional.ofNullable(customer);
+		return Optional.empty();
 	}
 }

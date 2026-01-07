@@ -140,8 +140,39 @@ TCS:
 
 ===================================================================================
 Vitrusa:
-1. How to know if a microservice is down
+1. How to know if a microservice is down (how to send auto reply from spring boot microservices if it is down)
+	Resilience4J @CircuitBreaker, Rate Limiter, Time Limiter, Retry , Bulkhead, cache
+	
+	
 2. How to get the second max value using stream api
 3. map and flat map
+
+
 4. @Qualifier and @Primary
-5. 
+	When 2 classes implements same interface, Autowiring the interface in our class will have issue during boot,
+	Spring needs clarity on which class should be injected.
+	Use @Qualifier in our class to decide or use @Primary in the class to default specify,
+	If both given, @Qualifier will have precedence over @Primary,
+	Use @Qualifier when YOU want to decide, Use @Primary when you want to set default.
+
+5. How to create a functional interface
+	A functional interface in Java is defined as an interface with exactly one abstract method.
+	It can also contain any number of default, static, or Object class methods. 
+	
+6. How Optional works
+	Optional is actually meant for method return type to indicate that the return might have nulls
+	
+7. What are Spring boot advantages over Spring
+	Spring Boot:
+	> No need to specify dependency version in in pom.xml (ex: Just specify started-web and jpa, The parent version internally takes care of started-web and jpa versions).
+	> Just provide application.properties or properties.yml spring boot internally handles dataSource, sessionfactory, hibernate configurations.
+	> Provides embedded server (Tomcat) for testing.
+	> Just provide @componentScan with base package or follow proper package structure and Spring automatically scan the components.
+	> Actuators are available in Spring boot (ex: Health check link, Beans initialized, disk space, CPU metrics link etc).
+	
+	Spring:
+	> Manually identify the dependency with versions, Dependency conflict may arise.
+	> dataSource, sessionfactory, hibernate configurations required in application-context.xml.
+	> Manually configure server to run application.
+	> Manually enable component scan (ex: beans and component-scan configuration required in servlet.xml).
+	> Need to add other third party actuators

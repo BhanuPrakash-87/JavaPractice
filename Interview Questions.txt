@@ -141,8 +141,9 @@ TCS:
 ===================================================================================
 Vitrusa:
 1. How to know if a microservice is down (how to send auto reply from spring boot microservices if it is down)
-	Resilience4J @CircuitBreaker, Rate Limiter, Time Limiter, Retry , Bulkhead, cache
-	
+	Resilience4J CircuitBreaker, Rate Limiter, Time Limiter, Retry , Bulkhead, cache
+	@CircuitBreaker(name = "userService", fallbackMethod = "getAllAvailableOrders")
+	Return type of fallback method and actual method should be same
 	
 2. How to get the second max value using stream api
 3. map and flat map

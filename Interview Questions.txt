@@ -146,6 +146,9 @@ Vitrusa:
 	
 2. How to get the second max value using stream api
 3. map and flat map
+	Both are methods provided by Stream API for working with collections,
+	map() returns a new Stream with transformed elements, map() operation performs a one-to-one transformation,
+	while flatMap() performs a one-to-many transformation and then flattens the resulting nested structure into a single-level stream or optional. 
 
 
 4. @Qualifier and @Primary
